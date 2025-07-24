@@ -1,11 +1,11 @@
+import Cv from "./components/cv/Cv.jsx";
+import Edit from "./components/edit/Edit.jsx";
 
-function App() {
-
+export default function App() {
   return (
-    <>
-      <h1 className="bg-amber-800 h-screen">test</h1>
-    </>
-  )
+    <div className="flex flex-row h-screen p-3">
+      <Edit />
+      <Cv />
+    </div>
+  );
 }
-
-export default App
