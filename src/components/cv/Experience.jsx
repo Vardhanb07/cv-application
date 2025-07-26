@@ -1,6 +1,6 @@
 import Subexp from "./Subexp.jsx"
 
-export default function Experience() {
+export default function Experience({ clearState }) {
   return (
     <div className="flex-2">
       <div className="flex justify-center items-center mt-2 bg-gray-400 font-roboto">

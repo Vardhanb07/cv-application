@@ -2,11 +2,16 @@ import call from "../../assets/call.svg";
 import location from "../../assets/location.svg";
 import mail from "../../assets/mail.svg";
 
-export default function Header() {
+export default function Header({ clearState }) {
+  function chageContent(initialValue, clearState) {
+    let x = initialValue
+    clearState[0] ? x = "" : x = initialValue
+    return x
+  }
   return (
     <div className="flex-1 flex flex-col bg-[#28b9dd]">
       <h1 className="flex-1 flex justify-center items-center text-[40px] font-roboto">
-        John Doe
+        {chageContent("John Doe", clearState)}
       </h1>
       <div className="flex-1 flex flex-row">
         <div className="flex-1 flex flex-row justify-center items-center">
