@@ -1,6 +1,6 @@
 import Subedu from "./Subedu.jsx";
 
-export default function Education({ clearState, loadState, educationState }) {
+export default function Education({ educationState }) {
   return (
     <div className="flex-2">
       <div className="flex justify-center items-center bg-gray-400 mt-2">
