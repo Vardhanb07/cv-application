@@ -1,7 +1,7 @@
 import { useState } from "react";
 import arrowDown from "../../assets/arrow-down.svg";
 
-export default function Introduction() {
+export default function Introduction({ introductionState }) {
   const [display, setDisplay] = useState("hidden");
   return (
     <div className="bg-gray-400 rounded-md p-2 mt-2 mb-2">
@@ -26,8 +26,15 @@ export default function Introduction() {
           <input
             type="text"
             id="name"
-            placeholder="John Doe"
             className="outline-1 text-[24px] border rounded-md pl-2"
+            onChange={(e) => {
+              let newObj = {
+                ...introductionState[0],
+                name: e.target.value,
+              };
+              introductionState[1](newObj);
+            }}
+            value={introductionState[0].name}
           />
         </div>
         <div className="flex-1 flex flex-col font-roboto">
@@ -37,8 +44,15 @@ export default function Introduction() {
           <input
             type="email"
             id="mail"
-            placeholder="Whatever@mail.com"
             className="outline-1 text-[24px] border rounded-md pl-2"
+            onChange={(e) => {
+              let newObj = {
+                ...introductionState[0],
+                mail: e.target.value,
+              };
+              introductionState[1](newObj);
+            }}
+            value={introductionState[0].mail}
           />
         </div>
         <div className="flex-1 flex flex-col font-roboto">
@@ -48,15 +62,34 @@ export default function Introduction() {
           <input
             type="text"
             id="location"
-            placeholder="whatever"
             className="outline-1 text-[24px] border rounded-md pl-2"
+            onChange={(e) => {
+              let newObj = {
+                ...introductionState[0],
+                location: e.target.value,
+              };
+              introductionState[1](newObj);
+            }}
+            value={introductionState[0].location}
           />
         </div>
         <div className="flex-1 flex flex-col font-roboto">
           <label htmlFor="number" className="text-[20px]">
             Number
           </label>
-          <input type="tel" id="number" placeholder="123456789" className="outline-1 text-[24px] border rounded-md pl-2"/>
+          <input
+            type="tel"
+            id="number"
+            className="outline-1 text-[24px] border rounded-md pl-2"
+            onChange={(e) => {
+              let newObj = {
+                ...introductionState[0],
+                number: e.target.value,
+              };
+              introductionState[1](newObj);
+            }}
+            value={introductionState[0].number}
+          />
         </div>
       </form>
     </div>

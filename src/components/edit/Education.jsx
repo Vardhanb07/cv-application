@@ -1,5 +1,5 @@
 import { useState } from "react";
-import arrowDown from "../../assets/arrow-down.svg"
+import arrowDown from "../../assets/arrow-down.svg";
 
 export default function Education() {
   const [display, setDisplay] = useState("hidden");
