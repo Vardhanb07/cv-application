@@ -2,7 +2,7 @@ import Introduction from "./Introduction.jsx";
 import Education from "./Education.jsx";
 import Experience from "./Experience.jsx";
 
-export default function Edit({ clearState, introductionState, loadState }) {
+export default function Edit({ clearState, introductionState, loadState, educationState, experienceState }) {
   return (
     <div className="flex-1">
       <div className="flex flex-row gap-5 ">
@@ -28,8 +28,8 @@ export default function Edit({ clearState, introductionState, loadState }) {
         </button>
       </div>
       <Introduction introductionState={introductionState} />
-      <Education />
-      <Experience />
+      <Education educationState={educationState} />
+      <Experience experienceState={experienceState} />
     </div>
   );
 }

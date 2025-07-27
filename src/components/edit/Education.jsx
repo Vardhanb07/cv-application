@@ -1,7 +1,7 @@
 import { useState } from "react";
 import arrowDown from "../../assets/arrow-down.svg";
 
-export default function Education() {
+export default function Education({ educationState }) {
   const [display, setDisplay] = useState("hidden");
   return (
     <div className="bg-gray-400 rounded-md p-2 mt-2 mb-2">
@@ -20,14 +20,21 @@ export default function Education() {
       </div>
       <form className={"flex-col m-2 gap-2 " + display}>
         <div className="flex-1 flex flex-col font-roboto">
-          <label htmlFor="name" className="text-[20px]">
+          <label htmlFor="title" className="text-[20px]">
             Title
           </label>
           <input
             type="text"
-            id="name"
-            placeholder="Whatever"
+            id="title"
             className="outline-1 text-[24px] border rounded-md pl-2"
+            onChange={(e) => {
+              let newObj = {
+                ...educationState[0],
+                title: e.target.value,
+              };
+              educationState[1](newObj);
+            }}
+            value={educationState[0].title}
           />
         </div>
         <div className="flex-1 flex flex-col font-roboto">
@@ -37,8 +44,15 @@ export default function Education() {
           <input
             type="text"
             id="degree"
-            placeholder="Whatever"
             className="outline-1 text-[24px] border rounded-md pl-2"
+            onChange={(e) => {
+              let newObj = {
+                ...educationState[0],
+                degree: e.target.value,
+              };
+              educationState[1](newObj);
+            }}
+            value={educationState[0].degree}
           />
         </div>
         <div className="flex-1 flex flex-col font-roboto">
@@ -48,8 +62,15 @@ export default function Education() {
           <input
             type="text"
             id="grade"
-            placeholder="0.0"
             className="outline-1 text-[24px] border rounded-md pl-2"
+            onChange={(e) => {
+              let newObj = {
+                ...educationState[0],
+                grade: e.target.value,
+              };
+              educationState[1](newObj);
+            }}
+            value={educationState[0].grade}
           />
         </div>
       </form>

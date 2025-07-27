@@ -1,7 +1,7 @@
 import { useState } from "react";
 import arrowDown from "../../assets/arrow-down.svg";
 
-export default function Education() {
+export default function Education({ experienceState }) {
   const [display, setDisplay] = useState("hidden");
   return (
     <div className="bg-gray-400 rounded-md p-2 mt-2 mb-2">
@@ -26,8 +26,15 @@ export default function Education() {
           <input
             type="text"
             id="title"
-            placeholder="Whatever"
             className="text-[24px] outline-1 border rounded-md pl-2"
+            onChange={(e) => {
+              let newObj = {
+                ...experienceState[0],
+                title: e.target.value,
+              };
+              experienceState[1](newObj);
+            }}
+            value={experienceState[0].title}
           />
         </div>
         <div className="flex-1 flex flex-col font-roboto">
@@ -37,8 +44,15 @@ export default function Education() {
           <input
             type="position"
             id="text"
-            placeholder="Whatever"
             className="outline-1 text-[24px] border pl-2 rounded-md"
+            onChange={(e) => {
+              let newObj = {
+                ...experienceState[0],
+                position: e.target.value,
+              };
+              experienceState[1](newObj);
+            }}
+            value={experienceState[0].position}
           />
         </div>
         <div className="flex-1 flex flex-col font-roboto">
@@ -49,6 +63,14 @@ export default function Education() {
             name="description"
             id="description"
             className="border rounded-md outline-1 p-2 text-[24px]"
+            onChange={(e) => {
+              let newObj = {
+                ...experienceState[0],
+                description: e.target.value,
+              };
+              experienceState[1](newObj);
+            }}
+            value={experienceState[0].description}
           ></textarea>
         </div>
       </form>
