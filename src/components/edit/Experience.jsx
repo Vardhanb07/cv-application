@@ -2,7 +2,7 @@ import { useState } from "react";
 import arrowDown from "../../assets/arrow-down.svg";
 
 export default function Education() {
-  const [display, setDisplay] = useState("none");
+  const [display, setDisplay] = useState("hidden");
   return (
     <div className="bg-gray-400 rounded-md p-2 mt-2 mb-2">
       <div className="flex flex-row p-2">
