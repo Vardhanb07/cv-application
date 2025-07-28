@@ -18,7 +18,7 @@ export default function Education({ educationState }) {
           }}
         />
       </div>
-      <form className={"flex-col m-2 gap-2 " + display}>
+      <form className={`${display} flex-col m-2 gap-2`}>
         <div className="flex-1 flex flex-col font-roboto">
           <label htmlFor="title" className="text-[20px]">
             Title

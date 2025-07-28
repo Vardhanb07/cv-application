@@ -18,7 +18,7 @@ export default function Introduction({ introductionState }) {
           }}
         />
       </div>
-      <form className={"flex-col m-2 gap-2 " + display}>
+      <form className={`${display} flex-col m-2 gap-2`}>
         <div className="flex-1 flex flex-col font-roboto">
           <label htmlFor="name" className="text-[20px]">
             Name
