@@ -11,19 +11,19 @@ export default function Header({ introductionState }) {
       <div className="flex-1 flex flex-row">
         <div className="flex-1 flex flex-row justify-center items-center">
           <img src={mail} alt="mail" height="40" width="40" />
-          <h2 className="text-[26px] font-roboto">
+          <h2 className="text-[22px] font-roboto">
             {introductionState[0].mail}
           </h2>
         </div>
         <div className="flex-1 flex flex-row justify-center items-center">
           <img src={call} alt="call" height="40" width="40" />
-          <h2 className="text-[26px] font-roboto">
+          <h2 className="text-[22px] font-roboto">
             {introductionState[0].number}
           </h2>
         </div>
         <div className="flex-1 flex flex-row justify-center items-center">
           <img src={location} alt="location" height="40" width="40" />
-          <h2 className="text-[26px] font-roboto">
+          <h2 className="text-[22px] font-roboto">
             {introductionState[0].location}
           </h2>
         </div>

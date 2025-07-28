@@ -23,7 +23,7 @@ export default function App() {
   });
 
   return (
-    <div className="flex flex-row h-screen p-3 gap-6">
+    <div className="flex flex-row h-screen p-3 gap-3">
       <Edit
         introductionState={[introduction, setIntroduction]}
         educationState={[education, setEducation]}
